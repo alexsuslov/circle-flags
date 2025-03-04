@@ -9,3 +9,6 @@ for file in flags/*.svg ; do
     rsvg-convert -h 120 -o png/${name}.png ${file}
     magick png/${name}.png webp/${name}.webp
 done
+
+montage  png/*.png -mode Concatenate -tile 16x -background none flags16x.png
+magick flags16x.png flags16x.webp
